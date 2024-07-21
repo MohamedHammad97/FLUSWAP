@@ -1,0 +1,238 @@
+:root {
+    --main-color: #8FE037;
+    --secondary-color: white;
+}
+
+/* SHARED */
+body {
+    background-color: #04030A;
+    overflow: hidden;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99999;
+    cursor: pointer;
+    display: none;
+}
+
+/* START LOADING SECTION */
+#loading {
+    display: flex;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    position: fixed;
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    color: #fff;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+}
+
+.loader:after {
+    color: #FF3D00;
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+
+@keyframes rotateccw {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+
+    0%,
+    100% {
+        box-shadow: .2em 0px 0 0px currentcolor;
+    }
+
+    12% {
+        box-shadow: .2em .2em 0 0 currentcolor;
+    }
+
+    25% {
+        box-shadow: 0 .2em 0 0px currentcolor;
+    }
+
+    37% {
+        box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+
+    50% {
+        box-shadow: -.2em 0 0 0 currentcolor;
+    }
+
+    62% {
+        box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+
+    75% {
+        box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+
+    87% {
+        box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+}
+
+/* END LOADING SECTION */
+
+/* START NAB BAR */
+nav .content {
+    position: relative;
+}
+
+nav .nav-link {
+    color: var(--secondary-color);
+}
+
+nav ul .special {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    background-color: var(--secondary-color);
+    transition: all 1s;
+}
+
+nav .content .special li a {
+    transition: all 0.5s;
+}
+
+nav .content .special li:hover a {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+nav .navbar a,
+nav .navbar a:focus {
+    color: var(--secondary-color);
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: var(--secondary-color);
+    width: 0%;
+    bottom: 0;
+    transition: all 0.5s;
+    visibility: hidden;
+}
+
+.navbar .active:before {
+    visibility: visible;
+    width: 80%;
+}
+
+#navBar,
+#navBar .container {
+    transition: all 0.5s;
+}
+
+/* END NAV BAR */
+
+/* START HEADER SECTION */
+header {
+    background-image: url(../imgs/Capture.png); 
+    background-position: center;
+    background-size: cover;
+}
+
+header .content span {
+    color: var(--main-color);
+}
+/* END HEADER SECTION */
+
+/* START SEACTION2 SECTION */
+#section2 {
+    text-align: center;
+}
+#section2 .content h2{
+    background-image: linear-gradient(to right, #FBFDF9, var(--main-color));
+    -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+
+/* END SEACTION2 SECTION */
+
+/* START SEACTION3 SECTION */
+#section3 .content h2 {
+    background-image: linear-gradient(to right, #FBFDF9, var(--main-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#section3 .special {
+    background-color: #D9D9D9;
+}
+/* END SEACTION3 SECTION */
+
+/* START SEACTION4 SECTION */
+#section4 .content h2{
+    color: var(--main-color);
+    font-weight: bolder;
+}
+
+/* END SEACTION4 SECTION */
+
+/* START FOOTER SECTION */
+#footer ul li {
+    text-decoration: none;
+    list-style-type: none;
+}
+#footer ul {
+    padding: 0;
+}
+
+#footer h4 {
+    color: #E6E6E7;
+}
+
+/* END FOOTER SECTION */
